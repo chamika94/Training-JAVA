@@ -1,0 +1,14 @@
+public class DBManager {
+
+   private static DBManager dbManager = new DBManager();
+
+   private DBManager(){}
+
+   public static DBManager getDBManager(){
+      return dbManager;
+   }
+
+   public void showMessage(){
+      System.out.println("welcome to Single Pattern");
+   }
+}
