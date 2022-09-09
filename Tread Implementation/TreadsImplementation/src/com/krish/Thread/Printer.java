@@ -13,5 +13,11 @@ public class Printer extends Thread{
         }
 
     }
+    public void run(int x) {
+        for (int i=0; i<10;i++){
+            System.out.println("This is from child thread"+currentThread().getName()+" "+i);
+        }
+
+    }
 
 }
