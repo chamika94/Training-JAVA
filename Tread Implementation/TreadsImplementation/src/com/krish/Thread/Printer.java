@@ -4,7 +4,11 @@ public class Printer extends Thread{
 
     @Override
     public void run() {
-        System.out.println("this is from child thread");
+
+        for (int i=0; i<10;i++){
+            System.out.println("This is from child thread"+currentThread().getName()+" "+i);
+        }
+
     }
 
 }
