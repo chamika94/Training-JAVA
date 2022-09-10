@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import com.krishantha.training.salesmanager.model.Employee;
 
-public class HibernateEmployeeRepositoryImpl {
+public class HibernateEmployeeRepositoryImpl implements EmployeeRepository {
 	
-	public List<Employee> grtAllEmployees(){
+	public List<Employee> getAllEmployees(){
 		
 		List<Employee> employees = new ArrayList<>();
 		
