@@ -5,12 +5,14 @@ import com.krishantha.training.salesmanager.repository.HibernateEmployeeReposito
 import java.util.List;
 import com.krishantha.training.salesmanager.model.Employee;
 
-public class EmployeeServiceImpl  {
+public class EmployeeServiceImpl implements EmployeeService  {
 	
 	
 	EmployeeRepository employeeRepository = new HibernateEmployeeRepositoryImpl();
 	
 	public List<Employee> getAllEmployee(){
+		
+		
 		return employeeRepository.getAllEmployees();
 	}
 

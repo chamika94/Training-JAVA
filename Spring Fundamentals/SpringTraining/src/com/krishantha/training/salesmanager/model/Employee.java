@@ -2,6 +2,7 @@ package com.krishantha.training.salesmanager.model;
 
 public class Employee {
 
+	
 	String employeeName;
 	String employeeLocation;
 	
