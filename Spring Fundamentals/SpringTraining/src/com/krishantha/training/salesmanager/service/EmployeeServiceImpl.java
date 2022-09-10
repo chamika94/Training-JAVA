@@ -7,19 +7,34 @@ import com.krishantha.training.salesmanager.model.Employee;
 public class EmployeeServiceImpl implements EmployeeService  {
 	
 	
-	private EmployeeRepository employeeRepository;
+	EmployeeRepository employeeRepository;
 	
-	
-	public List<Employee> getAllEmployee(){
-		
-		
-		return employeeRepository.getAllEmployees();
+	public EmployeeServiceImpl(EmployeeRepository employeerepository) {
+		this.employeeRepository = employeerepository;
 	}
 	
 	 public void setEmployeeRepository(EmployeeRepository employeeRepository) {
 		 
-			 this.employeeRepository = employeeRepository;
-			 
-	}
+		 this.employeeRepository = employeeRepository;			 
+		 
+     }
+	 
+	 public EmployeeRepository getEmployeeRepository() {
+		 
+		 return employeeRepository;			 
+		 
+     }
+	 
+	 public List<Employee> getAllEmployee(){
+		
+		return employeeRepository.getAllEmployees();
+	 }
+	
 
 }
+
+
+
+
+
+

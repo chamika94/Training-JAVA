@@ -9,7 +9,9 @@
 
   <bean name="employeeService" class="com.krishantha.training.salesmanager.service.EmployeeServiceImpl">
   
-    <property name="employeeRepository" ref="employeeRepository"></property>
+   <!-- <property name="employeeRepository" ref="employeeRepository"></property> -->
+   <constructor-arg index="0" ref="employeeRepository"></constructor-arg>
+   
   </bean>
   
 </beans>
