@@ -11,6 +11,17 @@ export class EmployeesComponent implements OnInit {
   title: string = 'Employee Management Solution';
   showIcon: boolean = false;
   employees: any[] = employees;
+  filterdEmployees: any[] = this.employees;
+  private _designationFilter: string = '';
+
+  set designationFilter(value: string){
+    this._designationFilter=value;
+    this.filterByDesignation();
+  }
+  
+  get designationFilter(): string{
+    return this._designationFilter;
+  }
 
   constructor() { }
 
@@ -19,5 +30,8 @@ export class EmployeesComponent implements OnInit {
   
   showIcons(){
     this.showIcon = !this.showIcon;
+  }
+  filterByDesignation(){
+    this.filterdEmployees = this.employees.filter(employee => employee.designation.includes(this.designationFilter));
   }
 }

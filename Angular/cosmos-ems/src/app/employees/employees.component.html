@@ -9,12 +9,12 @@
       <div class="row">
         <div class="col-md-2">Designation filter:</div>
         <div class="col-md-4">
-          <input type="text"/>
+          <input type="text" [ngModel]="designationFilter" (ngModelChange)="designationFilter=$event"/>
         </div>
       </div>
       <div class="row">
         <div class="col-md-6">
-          <h6>filtered by</h6>
+          <h6>filtered by {{designationFilter}}</h6>
         </div>
       </div>
       <div class="table-responsive">
@@ -34,14 +34,14 @@
             </tr>
            </thead>
            <tbody>
-            <tr *ngFor="let employee of employees">
+            <tr *ngFor="let employee of filterdEmployees ">
               <td>
                 <img [src]="employee.icon" *ngIf="showIcon">
               </td>
               <td>{{employee.first_name}}</td>
               <td>{{employee.last_name}}</td>
               <td>{{employee.designation}}</td>
-              <td>{{employee.insuranceBalance}}</td>
+              <td>{{employee.insuranceBalance | currency:"LKR":"symbol":"3.2-2" | lkrformatter:"Rs: "}}</td>
               <td>{{employee.rbtProgress}}</td>
             </tr>
            </tbody>
